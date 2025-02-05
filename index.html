@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Clone using Gemini API [$key]</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="output">
+      <h1 id="welcome">Hello Somnath <br>
+        How can I help you today?</h1>
+    </div>
+    <div class="footer">
+      <!-- apiKey: 'AIzaSyA5SQGi2wfXYEkjILH3eDb9hHP2R3jdpaI', -->
+      <input type="text" id="prompt" value="What is Javascript ?" />
+      <button id="generate">Generate</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+    async function chatWithAIAssistantMadeBySR() {
+      const apiKey = "AIzaSyA5SQGi2wfXYEkjILH3eDb9hHP2R3jdpaI";
+      const genAI = new GoogleGenerativeAI(`${apiKey}`);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      // const prompt = "what is JavaScript ?";
+      // const result = await model.generateContent(prompt);
+      // console.log(result.response.text());
+      const linkWithOutputId = document.getElementById("output");
+      const takeInputFromUI = document.getElementById("prompt");
+      const createPinUI = document.createElement("p");
+      const prompt = takeInputFromUI.value;
+      const result = await model.generateContent(prompt);
+      createPinUI.innerText = result.response.text();
+      console.log(result.response.text());
+      linkWithOutputId.appendChild(createPinUI);
+    }
+    function hideWelcome() {
+      document.getElementById("welcome").style.display = "none";
+    }
+    document
+      .getElementById("generate")
+      .addEventListener("click", () => {
+        chatWithAIAssistantMadeBySR();
+        // document.getElementById("welcome").style.display = "none";
+        // https://replit.com/@PranshuVerma2/UnfitDarkgraySyndrome?error=overlimit#index.js
+        hideWelcome();
+      });
+
+
+  </script>
+</body>
+
+</html>

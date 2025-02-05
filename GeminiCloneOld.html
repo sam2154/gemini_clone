@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Clone</title>
+</head>
+
+<body>
+    <!-- API Key :AIzaSyAEoERBCQVvPJFNMdfT0ledqeHiL79l68U  -->
+    <h1 style="text-align:center">Playing Gemini API</h1>
+
+
+
+
+
+
+
+    <!-- 1.Script -->
+    <script type="importmap">
+        {
+            "imports":{
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+     </script>
+
+
+    <!-- 2.Script -->
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        let api_key = "AIzaSyAEoERBCQVvPJFNMdfT0ledqeHiL79l68U";
+        const genAI = new GoogleGenerativeAI(`${api_key}`)
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const prompt = "Explain how AI works";
+        const result = await model.generateContent(prompt);
+        console.log(result.response.text());
+
+    </script>
+</body>
+
+</html>
