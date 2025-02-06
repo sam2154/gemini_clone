@@ -96,6 +96,7 @@ h1 {
   border-radius: 20px 0 0 20px;
   background-color: #333;
   color: white;
+  height: 50px;
 }
 
 .footer input:focus {
@@ -112,6 +113,7 @@ h1 {
   border-radius: 0 20px 20px 0;
   cursor: pointer;
   transition: 0.3s;
+  height: 50px;
 }
 
 .footer button:hover {
