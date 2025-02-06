@@ -47,17 +47,18 @@ h1 {
 /* //Adding ScrollBar Style Code start */
 ::-webkit-scrollbar {
   width: 5px;
+  /* display: none !important; */
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000000; 
+  background: #000000;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #555; 
- 
+  background: #555;
+
 }
 
 /* Handle on hover */
@@ -117,7 +118,8 @@ h1 {
   background-color: #1E6BFF;
 }
 
-* //side-bar style code start -----------------------------------------*/
+
+/* //side-bar style code start -----------------------------------------*/
 .sideBar {
   width: 300px;
   background-color: #2d3033;
