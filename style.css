@@ -44,6 +44,29 @@ h1 {
   background-color: #181818;
 }
 
+/* //Adding ScrollBar Style Code start */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; 
+ 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* //Adding ScrollBar Style Code end */
+
 #output p {
   background-color: #282828;
   color: #E0E0E0;
